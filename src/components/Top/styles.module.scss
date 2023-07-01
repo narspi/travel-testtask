@@ -1,37 +1,13 @@
 @import "../../styles/variables";
 
 .top {
-  min-height: min(100vh,900px);
+  margin-bottom: 318px;
+  min-height: min(100vh, 900px);
   background-image: url("/top-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
-
-  &__inner {
-    padding-top: 103px;
-    padding-bottom: 52px;
-    width: 100%;
-    flex-grow: 1;
-    color: $white;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__body {
-    margin-top: auto;
-    margin-bottom: 10%;
-  }
-
-  &__title {
-    margin: 0 0 12px;
-    font-size: 32px;
-    font-weight: 500;
-  }
-
-  &__item-descr {
-    color: red;
-  }
 
   &__btn {
     padding: 16px;
@@ -42,15 +18,35 @@
     color: $white;
     margin-bottom: 31px;
   }
+}
 
-  &__list {
-    padding-left: 20px;
-    margin: 0;
-    display: flex;
-    gap: 42px;
-  }
+.inner {
+  padding-top: 103px;
+  padding-bottom: 52px;
+  width: 100%;
+  flex-grow: 1;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+}
 
-  &__list-elem {
+.body {
+  margin-top: auto;
+  margin-bottom: 10%;
+}
+
+.title {
+  margin: 0 0 12px;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.list {
+  padding-left: 20px;
+  margin: 0;
+  display: flex;
+  gap: 42px;
+  &__elem {
     font-size: 24px;
     font-weight: 500;
     color: $white;
@@ -64,16 +60,39 @@
       content: url("/top-list-item-2.svg");
     }
   }
+}
 
-  &__items {
-    display: flex;
-    gap: 71px;
+.items {
+  display: flex;
+  gap: 71px;
+}
+
+.item {
+  width: 33.33%;
+  border-radius: 0px 0px 13px 13px;
+  background: linear-gradient(0deg, #1e549f 0%, rgba(20, 116, 184, 0) 100%);
+  padding: 20px 0 0;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 20px 35px 9px;
   }
 
-  &__item {
-    width: 33.33%;
-    border-radius: 0px 0px 13px 13px;
-    background: linear-gradient(0deg, #1e549f 0%, rgba(20, 116, 184, 0) 100%);
-    padding: 20px 35px 0 35px;
+  &__descr {
+    margin: 0 35px 24px;
+    font-size: 16px;
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    border: none;
+    background-image: linear-gradient(180deg, #5FC9F3 0%, #55ABF5 100%);
+    color: $white;
+    border-radius:7px;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px;
   }
 }

@@ -1,5 +1,19 @@
+:root {
+    --modal-padding: 0px;
+}
+
 button {
     cursor: pointer;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container-lg {

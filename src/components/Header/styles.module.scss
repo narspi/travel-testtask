@@ -6,6 +6,10 @@
     left: 0;
     width: 100%;
     color: $white;
+
+    &.modal {
+        padding-right: var(--modal-padding);
+    }
 }
 
 .inner {

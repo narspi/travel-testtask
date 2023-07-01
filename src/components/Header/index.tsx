@@ -1,53 +1,27 @@
 import styles from "./styles.module.scss";
 import Social from "../Social";
-import Link from "next/link";
-
+import Menu from "../Menu";
+import { useContext } from "react";
+import { ModalContext } from "@/context/ModalContext";
+import { clsx } from 'clsx';
+import { padding } from "@/utils/paddingRight";
 
 const Header = () => {
+  const { openModal,setOpenModal } = useContext(ModalContext);
+  const openClickFoo = () => {
+    document.body.style.paddingRight = padding();
+    document.body.style.setProperty("--modal-padding", padding());
+    document.body.style.overflow = "hidden";
+    setOpenModal(true);
+  };
   return (
-    <header className={styles.header}>
+    <header className={clsx(styles.header,openModal && styles.modal)}>
       <div className="container-lg">
         <div className={styles.inner}>
-          <nav className={styles.menu}>
-            <ul className={styles.menu__list}>
-              <li className="menu__item">
-                <Link className={styles.menu__link} href="#">
-                  О клубе
-                </Link>
-              </li>
-              <li className="menu__item">
-                <Link href='/blog' className={styles.menu__link}>
-                  Блог
-                </Link>
-              </li>
-              <li className="menu__item">
-                <Link className={styles.menu__link} href="#">
-                  Снаряжение
-                </Link>
-              </li>
-              <li className="menu__item">
-                <Link className={styles.menu__link} href="#">
-                  Туры
-                </Link>
-              </li>
-              <li className="menu__item">
-                <Link className={styles.menu__link} href="#">
-                  Акции
-                </Link>
-              </li>
-              <li className="menu__item">
-                <Link className={styles.menu__link} href="#">
-                  Отзывы
-                </Link>
-              </li>
-              <li className="menu__item">
-                <Link className={styles.menu__link} href="#">
-                  Контакты
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          <button className={styles.call}>Обратный звонок</button>
+          <Menu />
+          <button className={styles.call} onClick={openClickFoo}>
+            Обратный звонок
+          </button>
           <Social />
         </div>
       </div>
