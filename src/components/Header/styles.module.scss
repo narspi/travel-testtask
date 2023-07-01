@@ -1,0 +1,47 @@
+@import "../../styles/variables.scss";
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: $white;
+}
+
+.inner {
+    padding: 29px 0;
+    display: flex;
+    align-items: center;
+}
+
+.call {
+    margin: 0 27px 0 auto;
+    padding: 12px 19px;
+    border: none;
+    background-color: $white;
+    color: $black;
+    border-radius: 13px;
+    font: inherit;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.menu {
+    &__list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        display: flex;
+        gap: 44px;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $white;
+        font-size: 18px;
+        line-height: 1.2;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
