@@ -13,7 +13,7 @@ export default blog;
 
 export async function getStaticProps() {
   try {
-    const posts = await (await fetch('https://my-json-server.typicode.com/narspi/travel-testtask'))?.json()
+    const posts = await (await fetch('https://my-json-server.typicode.com/narspi/travel-testtask/posts'))?.json()
 
     // обратите внимание на сигнатуру
     return {
