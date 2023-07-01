@@ -1,6 +1,7 @@
 import HeaderBlog from "@/components/HeaderBlog.tsx";
 
-const blog = () => {
+const blog = (props) => {
+  console.log(props)
   return (
     <>
       <HeaderBlog />
@@ -8,4 +9,28 @@ const blog = () => {
   )
 }
 
-export default blog
+export default blog;
+
+export async function getStaticProps() {
+  try {
+    const posts = await (await fetch('https://my-json-server.typicode.com/narspi/travel-testtask'))?.json()
+
+    // обратите внимание на сигнатуру
+    return {
+      props: {
+        posts
+      }
+    }
+  } catch (err) {
+    console.log(err.message);
+    return {
+      props: {
+        err: 'unsuccess'
+      }
+    }
+  }
+ 
+}
+
+
+
