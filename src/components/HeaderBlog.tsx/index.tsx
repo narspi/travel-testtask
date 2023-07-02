@@ -6,12 +6,12 @@ import { ModalContext } from "@/context/ModalContext";
 import { padding } from "@/utils/paddingRight";
 
 const HeaderBlog = () => {
-  const { setOpenModal } = useContext(ModalContext);
+  const { setOpenCall } = useContext(ModalContext);
   const openClickFoo = () => {
     document.body.style.paddingRight = padding();
     document.body.style.setProperty("--modal-padding", padding());
     document.body.style.overflow = "hidden";
-    setOpenModal(true);
+    setOpenCall(true);
   };
   return (
     <header className={styles.header}>
