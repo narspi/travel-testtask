@@ -23,11 +23,41 @@
 }
 
 .bottom {
-  color: $blue-dark;
+  color: #103A58;
 }
 
 .inner {
   display: flex;
   justify-content: space-between;
   padding: 21px 0;
+}
+
+@media (max-width: 900px) {
+  .top {
+    min-height: 178px;
+  }
+
+  .bottom {
+    color: $blue-dark;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .social {
+    display: none;
+  }
+
+  .call {
+    display: none;
+  }
+
+  .call {
+    background-color: $blue-dark;
+    color: $white;
+  }
+
+  .bottom .call {
+    display: block;
+  }
 }

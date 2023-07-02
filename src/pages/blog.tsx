@@ -6,7 +6,7 @@ import { post } from "@/components/Posts";
 const blog = ({
   posts,
   err,
-}: InferGetStaticPropsType<typeof getServerSideProps>) => {
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <HeaderBlog />
@@ -22,7 +22,7 @@ const blog = ({
 
 export default blog;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const posts: post[] = await (
       await fetch(

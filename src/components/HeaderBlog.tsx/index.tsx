@@ -23,8 +23,11 @@ const HeaderBlog = () => {
       <div className={styles.bottom}>
         <div className="container-lg">
           <div className={styles.inner}>
-            <Menu />  
-            <Social />
+            <Menu />
+            <div className={styles.social}>
+              <Social />
+            </div>
+            <button className={styles.call} onClick={openClickFoo}>Обратный звонок</button>
           </div>
         </div>
       </div>
