@@ -47,11 +47,12 @@ const Menu = () => {
   const pathname = router.pathname;
   const { isOpenMenu, setOpenMenu } = useContext(ModalContext);
   const burgerClickFoo = () => {
+    document.body.style.overflow = "hidden";
     setOpenMenu(true);
   };
   const closeClickFoo = () => {
+    document.body.style.removeProperty('--modal-padding');
     setOpenMenu(false);
-    console.log('click')
   };
   return (
     <nav className={styles.menu}>
