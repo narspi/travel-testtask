@@ -123,3 +123,28 @@
     padding: 0 20px;
   }
 }
+
+@media (max-width: 600px) {
+  .modal {
+    &::before {
+      content: "";
+      display: block;
+      height: 160px;
+      background-color: $blue-dark;
+      order: 2;
+    }
+    &::after {
+      content: "";
+      display: block;
+      background-image: url("/wave-footer.svg");
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: auto 100%;
+      padding-top: 34%;
+      width: 100%;
+      margin-top: auto;
+      position: relative;
+      top: 2px;
+    }
+  }
+}

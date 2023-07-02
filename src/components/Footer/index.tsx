@@ -3,6 +3,10 @@ import Social from "../Social";
 import Link from "next/link";
 
 const Footer = () => {
+  const scrolTopFoo = () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.background}>
@@ -57,8 +61,11 @@ const Footer = () => {
                 </a>
               </div>
               <div className={styles.info}>
-                <Social />
+                <div className={styles.social}>
+                  <Social />
+                </div>
                 <p className={styles.copy}>Все права защищены © 2010-2013<br/>Обучение дайвингу в Москве</p>
+                <button className={styles.btn__scroll} onClick={scrolTopFoo}>Вернуться наверх</button>
               </div>
             </div>
           </div>

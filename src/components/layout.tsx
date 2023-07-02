@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       <div className={clsx(roboto.className, "layout")}>
         {isOpenCall && <ModalCall />}
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </ModalProvider>
   );

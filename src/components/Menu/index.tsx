@@ -51,7 +51,7 @@ const Menu = () => {
     setOpenMenu(true);
   };
   const closeClickFoo = () => {
-    document.body.style.removeProperty('--modal-padding');
+    document.body.style.removeProperty('overflow');
     setOpenMenu(false);
   };
   return (

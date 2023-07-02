@@ -96,3 +96,54 @@
   font-size: 12px;
   margin: 16px 0 0;
 }
+
+.btn__scroll {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  margin-top: 52px;
+  font-size: 20px;
+  color: $white;
+}
+
+@media (max-width: 800px) {
+  .bottom {
+    display: block;
+  }
+  
+  .menu {
+    display: none;
+  }
+
+  .social {
+    display: none;
+  }
+
+  .contacts {
+    align-items: center;
+    gap: 5px;
+  }
+
+  .info {
+    align-items: center;
+  }
+
+  .copy {
+    text-align: center;
+    margin-top: 52px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    &::before {
+      padding-top: 115px;
+      background-size: auto 115px;
+      background-position: top center;
+    }
+
+    .contacts {
+      margin-top: 160px;
+    }
+  }
+}
