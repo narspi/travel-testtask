@@ -49,3 +49,13 @@
         }
     }
 }
+
+@media (max-width: 1260px) {
+    .social {
+        display: none;
+    }
+
+    .call {
+        margin-right: 0;
+    }
+}

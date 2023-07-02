@@ -91,3 +91,44 @@ export const CloseBtnIcon = () => {
     </svg>
   );
 };
+
+export const BurgerIcon = () => {
+  return (
+    <svg
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M40 10V4H0V10H40ZM40 22V16H0V22H40ZM40 34V28H0V34H40Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
+export const CloseMenuIcon = () => {
+  return (
+    <svg
+      width="23"
+      height="23"
+      viewBox="0 0 23 23"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_55_340)">
+        <path
+          d="M15.042 11.5231L23 19.4811L19.458 23.0231L11.5 15.0651L3.542 23.0231L0 19.4811L7.958 11.5231L0 3.56507L3.542 0.0230713L11.5 7.98107L19.458 0.0230713L23 3.56507L15.042 11.5231Z"
+          fill="#103A58"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_55_340">
+          <rect width="23" height="23" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};

@@ -14,14 +14,15 @@ const roboto = Roboto({
 });
 
 export default function Layout({ children }: { children: ReactNode }) {
-  const [openModal, setOpenModal] = useState(false);
+  const [isOpenCall, setOpenCall] = useState(false);
+  const [isOpenMenu, setOpenMenu] = useState(false);
 
   return (
-    <ModalProvider value={{ openModal,setOpenModal }}>
+    <ModalProvider value={{ isOpenCall,setOpenCall,isOpenMenu,setOpenMenu }}>
       <div className={clsx(roboto.className, "layout")}>
-        {openModal && <ModalCall />}
+        {isOpenCall && <ModalCall />}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </ModalProvider>
   );

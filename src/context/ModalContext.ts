@@ -1,10 +1,17 @@
-import { Dispatch, SetStateAction,createContext } from "react";
+import { Dispatch, SetStateAction, createContext } from "react";
 
 interface ITContext {
-  openModal: boolean;
-  setOpenModal: Dispatch<SetStateAction<boolean>>;
+  isOpenCall: boolean;
+  setOpenCall: Dispatch<SetStateAction<boolean>>;
+  isOpenMenu: boolean;
+  setOpenMenu: Dispatch<SetStateAction<boolean>>;
 }
 
-export const ModalContext = createContext<ITContext>({openModal: false, setOpenModal: ()=> {} });
+export const ModalContext = createContext<ITContext>({
+  isOpenCall: false,
+  setOpenCall: () => {},
+  isOpenMenu: false,
+  setOpenMenu: ()=> {},
+});
 
 export default ModalContext.Provider;

@@ -7,22 +7,24 @@ import { clsx } from 'clsx';
 import { padding } from "@/utils/paddingRight";
 
 const Header = () => {
-  const { openModal,setOpenModal } = useContext(ModalContext);
+  const { isOpenCall,setOpenCall } = useContext(ModalContext);
   const openClickFoo = () => {
     document.body.style.paddingRight = padding();
     document.body.style.setProperty("--modal-padding", padding());
     document.body.style.overflow = "hidden";
-    setOpenModal(true);
+    setOpenCall(true);
   };
   return (
-    <header className={clsx(styles.header,openModal && styles.modal)}>
+    <header className={clsx(styles.header,isOpenCall && styles.modal)}>
       <div className="container-lg">
         <div className={styles.inner}>
           <Menu />
           <button className={styles.call} onClick={openClickFoo}>
             Обратный звонок
           </button>
-          <Social />
+          <div className={styles.social}>
+            <Social />
+          </div>
         </div>
       </div>
     </header>

@@ -2,6 +2,10 @@ import styles from "./styles.module.scss";
 import { clsx } from "clsx";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { BurgerIcon, CloseMenuIcon } from "../SvgIcon";
+import Social from "../Social";
+import { ModalContext } from "@/context/ModalContext";
+import { useContext } from "react";
 
 const data = [
   {
@@ -35,29 +39,55 @@ const data = [
   {
     route: "/#7",
     name: "Контакты",
-  }
+  },
 ];
 
 const Menu = () => {
   const router = useRouter();
   const pathname = router.pathname;
+  const { isOpenMenu, setOpenMenu } = useContext(ModalContext);
+  const burgerClickFoo = () => {
+    setOpenMenu(true);
+  };
+  const closeClickFoo = () => {
+    setOpenMenu(false);
+    console.log('click')
+  };
   return (
     <nav className={styles.menu}>
-      <ul className={styles.menu__list}>
-        {data.map((link) => (
-          <li className="menu__item" key={link.route}>
-            <Link
-              className={clsx(
-                styles.menu__link,
-                pathname === link.route && styles.active
-              )}
-              href={link.route}
-            >
-              {link.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <button
+        className={styles.burger}
+        aria-label="открыть меню"
+        onClick={burgerClickFoo}
+      >
+        <BurgerIcon />
+      </button>
+      <div className={clsx(styles.modal, isOpenMenu && styles.open)}>
+        <div className={styles.top}>
+          <button className={styles.close} onClick={closeClickFoo}>
+            <CloseMenuIcon />
+          </button>
+          <div className={styles.modal__social}>
+            <Social />
+          </div>
+        </div>
+        <ul className={styles.menu__list}>
+          {data.map((link) => (
+            <li className={styles.menu__item} key={link.route}>
+              <Link
+                className={clsx(
+                  styles.menu__link,
+                  pathname === link.route && styles.active
+                )}
+                href={link.route}
+                onClick={closeClickFoo}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
